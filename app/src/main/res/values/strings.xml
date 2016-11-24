@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Inwentaryzator</string>
+    <string name="title_activity_product_list">ProductListActivity</string>
+</resources>

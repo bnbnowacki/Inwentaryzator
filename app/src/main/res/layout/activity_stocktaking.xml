@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_stocktaking"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.bartosz.inwentaryzator.StocktakingActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LastRecord3"
+        android:text="ostatni towar 3"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LastRecord3"
+        android:id="@+id/LastRecord2"
+        android:text="ostatni towar 2"
+        android:visibility="invisible" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LastRecord2"
+        android:id="@+id/LastRecord1"
+        android:text="ostatni towar 1"
+        android:visibility="invisible" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LastRecord1"
+        android:layout_marginTop="50dp"
+        android:id="@+id/TextBarcode"
+        android:text="Kod Kreskowy:"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/TextBarcode"
+        android:layout_alignBaseline="@id/TextBarcode"
+        android:id="@+id/EditTextBarcode"
+        android:hint="000000000"
+        android:inputType="number"
+        android:singleLine="true"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/TextBarcode"
+        android:layout_marginTop="40dp"
+        android:id="@+id/TextCount"
+        android:text="Ilość:"
+        android:visibility="invisible" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_toRightOf="@id/TextBarcode"
+        android:layout_alignBaseline="@id/TextCount"
+        android:id="@+id/EditTextCount"
+        android:hint="0.000"
+        android:singleLine="true"
+        android:inputType="numberSigned"
+        android:visibility="invisible" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/TextCount"
+        android:layout_marginTop="30dp"
+        android:id="@+id/TextProductName"
+        android:text="Nazwa Produktu"
+        android:visibility="invisible" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/TextProductName"
+        android:id="@+id/TextGlobalCount"
+        android:text="Stan ogólny: "
+        android:visibility="invisible" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/TextGlobalCount"
+        android:id="@+id/TextOnDeviceCount"
+        android:text="Wpisano na tym urz. :"
+        android:visibility="invisible" />
+    
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextOnDeviceCount"
+        android:layout_marginTop="50dp"
+        android:id="@+id/ButtonScanBarcode"
+        android:text="Skanuj"
+        android:onClick="onBtnScanBarcode"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ButtonScanBarcode"
+        android:layout_alignBottom="@id/ButtonScanBarcode"
+        android:id="@+id/ButtonSearchDone"
+        android:text="Wyszukaj/zatwierdź"
+        android:onClick="onBtnSearchDoneClick"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ButtonScanBarcode"
+        android:id="@+id/ButtonFinishCounting"
+        android:text="Zakończ"
+        android:onClick="onBtnFinishCountingClick"/>
+
+</RelativeLayout>
