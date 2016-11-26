@@ -68,6 +68,11 @@ public class StocktakingActivity extends AppCompatActivity {
                     }
                 }
             }
+            if(!isProductFound)
+            {
+                Intent intent = new Intent(this, ShowListPopup.class);
+                startActivityForResult(intent, ProjectDataClass.POPUP_PRODLIST_REQUESTCODE);
+            }
         }
         else if(isProductFound)
         {
@@ -150,7 +155,26 @@ public class StocktakingActivity extends AppCompatActivity {
         integrator.initiateScan();
     }
 
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if(requestCode == ProjectDataClass.POPUP_PRODLIST_REQUESTCODE)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                Intent i = new Intent(this, ProductListActivity.class);
+                startActivityForResult(i, ProjectDataClass.PRODLIST_REQUESTCODE);
+            }
+            return;
+        }
+        if(requestCode == ProjectDataClass.PRODLIST_REQUESTCODE)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                editTextBarcode.setText(intent.getStringExtra("BARCODE"));
+                onBtnSearchDoneClick(buttonSearchDone);
+            }
+        }
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (scanningResult != null) {
             String scanContent = scanningResult.getContents();

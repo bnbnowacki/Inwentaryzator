@@ -19,4 +19,9 @@ public class Product {
         barcode = new ArrayList<String>();
         change = 0.0f;
     }
+    @Override
+    public String toString()
+    {
+        return name;
+    }
 }

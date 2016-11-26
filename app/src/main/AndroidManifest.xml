@@ -30,6 +30,9 @@
             android:name=".ProductListActivity"
             android:label="@string/title_activity_product_list"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowListPopup"
+            android:theme="@style/MyPopupStyle"/>
     </application>
 
 </manifest>

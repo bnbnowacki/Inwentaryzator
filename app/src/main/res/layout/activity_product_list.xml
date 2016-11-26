@@ -18,11 +18,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="szukaj"
-        android:layout_toRightOf="@id/textListSearch"/>
+        android:layout_toRightOf="@id/textListSearch"
+        android:id="@+id/buttonSearchProducts"
+        android:onClick="onBtnSearchProductsClick"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textListSearch">
+        android:layout_below="@id/textListSearch"
+        android:id="@+id/listViewSelectedProducts">
 
     </ListView>
 </RelativeLayout>
