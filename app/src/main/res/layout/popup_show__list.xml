@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light">
+    android:background="#ffffff">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nie znaleziono produktu o takiej nazwie. Czy chcesz wybrać produkt z listy?"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="20dp"
         android:id="@+id/textOpenProductList"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textOpenProductList"
         android:text="tak"
         android:id="@+id/buttonYesProductList"
-        android:onClick="onBtnPopupYesClick"/>
+        android:onClick="onBtnPopupYesClick"
+        android:layout_below="@id/textOpenProductList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

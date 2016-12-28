@@ -43,41 +43,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnSaveClick(View view) {
-        ExportDatabase myDbHelper = new ExportDatabase(this);
-        SQLiteDatabase db = myDbHelper.getReadableDatabase();
-
-        String[] projection = {ExportDatabase.COLUMN_ID_NAME, ExportDatabase.COLUMN_BARCODE_NAME, ExportDatabase.COLUMN_COUNT_NAME};
-        Cursor c = db.query(ExportDatabase.DATABASE_TABLENAME, projection, null, null, null, null, null);
-        c.moveToFirst();
-        String stringToFile = "";
-        File path = Environment.getExternalStorageDirectory();
-        File file = new File(path, "PlikWyjsciowy.txt");
-        try {
-            PrintWriter pw = new PrintWriter(new FileWriter(file));
-            stringToFile = "Artykuly wygenerowane dla prorgamu INFOFAST\r\n";
-            pw.println(stringToFile);
-            if(c.getCount() != 0)
-            {
-                String floatString = Float.toString(c.getFloat(2));
-                floatString = floatString.replace('.', ',');
-                stringToFile = c.getString(1) + ";" + floatString + "\r\n";
-                pw.println(stringToFile);
-            }
-            while(c.moveToNext())
-            {
-                String floatString = Float.toString(c.getFloat(2));
-                floatString = floatString.replace('.', ',');
-                stringToFile = c.getString(1) + ";" + floatString + "\r\n";
-                pw.println(stringToFile);
-            }
-            pw.flush();
-            db.delete(ExportDatabase.DATABASE_TABLENAME, null, null);
-            Toast.makeText(this, "Zapisano!", Toast.LENGTH_SHORT).show();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Intent intent = new Intent(this, SavePassordPopup.class);
+        startActivity(intent);
     }
 
     public void onBtnStocktaking(View view) {
@@ -89,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnListClick(View view) {
-        //Intent intent = new Intent(this, ProductListActivity.class);
-        //startActivity(intent);
-        Toast.makeText(this, "Funkcja listy jest w trakcie budowy", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, EntryListActivity.class);
+        startActivity(intent);
+        //Toast.makeText(this, "Funkcja listy jest w trakcie budowy", Toast.LENGTH_SHORT).show();
     }
 }

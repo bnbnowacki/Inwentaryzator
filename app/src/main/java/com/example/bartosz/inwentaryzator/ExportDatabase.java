@@ -9,9 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class ExportDatabase extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 3;
     public static final String DATABASE_TABLENAME = "PRODUCT_TAB";
-    public static final String COLUMN_ID_NAME = "PRODUCT_ID";
+    public static final String COLUMN_ID_NAME = "_id";
     public static final String COLUMN_BARCODE_NAME = "PRODUCT_BARCODE";
     public static final String COLUMN_COUNT_NAME = "PRODUCT_COUNT";
     public static final String DATABASE_CREATETABLE_STRING = "CREATE TABLE IF NOT EXISTS " + DATABASE_TABLENAME + "(" + COLUMN_ID_NAME + " int, " +

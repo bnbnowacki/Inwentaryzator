@@ -32,6 +32,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ShowListPopup"
+            android:theme="@style/MyPopupStyle" />
+        <activity android:name=".EntryListActivity" />
+        <activity android:name=".SavePassordPopup"
             android:theme="@style/MyPopupStyle"/>
     </application>
 

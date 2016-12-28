@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/LastRecord1"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/TextBarcode"
         android:text="Kod Kreskowy:"/>
 
@@ -65,7 +65,7 @@
         android:id="@+id/EditTextCount"
         android:hint="0.000"
         android:singleLine="true"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal|numberSigned"
         android:visibility="invisible" />
     
     <TextView

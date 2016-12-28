@@ -2,6 +2,7 @@ package com.example.bartosz.inwentaryzator;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -51,7 +52,7 @@ public class ReadFileActivity extends AppCompatActivity {
 
             FileInputStream fInputStream = new FileInputStream(myFile);
             DataInputStream dInputStream = new DataInputStream(fInputStream);
-            BufferedReader bReader = new BufferedReader(new InputStreamReader(dInputStream));
+            BufferedReader bReader = new BufferedReader(new InputStreamReader(dInputStream, "windows-1250"));
             String strLine = "";
             int i = 0;
             Toast.makeText(this,"Znaleziono plik!", Toast.LENGTH_SHORT).show();
